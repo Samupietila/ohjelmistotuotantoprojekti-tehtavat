@@ -12,7 +12,8 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
-    <dependencies>
+
+<dependencies>
     <dependency>
         <groupId>com.example</groupId>
         <artifactId>example-artifact</artifactId>
@@ -26,6 +27,4 @@
             </dependency>
         </dependencies>
     </dependency>
-</dependencies>
-
 </project>
