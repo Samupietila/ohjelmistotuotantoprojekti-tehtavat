@@ -1,5 +1,6 @@
-package Temp_Convert.src.main.java.com.example;
-public class TemperatureConverter {
+package temp_convert;
+
+public class TempConverter {
 
     /**
      * Converts Fahrenheit to Celsius.
@@ -29,6 +30,5 @@ public class TemperatureConverter {
      */
     public boolean isExtremeTemperature(double celsius) {
         return celsius < -40 || celsius > 50;
-    }
+    }  
 }
-
