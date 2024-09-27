@@ -5,7 +5,7 @@ pipeline {
         // Define Docker Hub credentials ID
         DOCKERHUB_CREDENTIALS_ID = 'dockerhub_credential'
         // Define Docker Hub repository name
-        DOCKERHUB_REPO = 'samupietila/lecturedemo3'
+        DOCKERHUB_REPO = 'samupietila/homeassigment_week6'
         // Define Docker image tag
         DOCKER_IMAGE_TAG = 'latest'
         DOCKER_CMD = '/usr/bin/docker'
