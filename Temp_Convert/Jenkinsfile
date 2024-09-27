@@ -8,21 +8,29 @@ pipeline {
         DOCKERHUB_REPO = 'samupietila/lecturedemo3'
         // Define Docker image tag
         DOCKER_IMAGE_TAG = 'latest'
+        DOCKER_CMD = '/usr/bin/docker'
     }
     stages {
         stage('Checkout') {
             steps {
-                // Checkout code from Git repository
-                git 'https://github.com/Samupietila/ohjelmistotuotantoprojekti-tehtavat.git'
-                sh 'ls -la'
-                sh 'ls -la ./Temp_Convert'
+                script {
+                    echo 'Checking out repository'
+                    // Ensure correct branch name and repository URL
+                    checkout([$class: 'GitSCM',
+                        branches: [[name: '*/main']], // or '*/master' if that's the correct branch
+                        userRemoteConfigs: [[url: 'https://github.com/Samupietila/ohjelmistotuotantoprojekti-tehtavat.git']]
+                    ])
+                    // List directory contents for debugging
+                    sh 'ls -la'
+                    sh 'ls -la ./Temp_Convert'
+                }
             }
         }  
         stage('Build Docker Image') {
             steps {
                 // Build Docker image
                 script {
-                    docker.build("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG} ./Temp_Convert")
+                    sh 'docker build -t ${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG} ./Temp_Convert'
                 }
             }
         }
