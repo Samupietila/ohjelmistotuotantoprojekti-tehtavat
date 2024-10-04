@@ -4,11 +4,11 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
-import org.junit.Test;
+
 import com.example.SamuDocker;
 
 public class SamuDockerTest {
-    @Test
+    @org.junit.jupiter.api.Test
     public void testMain() {
         String input = "Samu";
         InputStream in = new ByteArrayInputStream(input.getBytes());
