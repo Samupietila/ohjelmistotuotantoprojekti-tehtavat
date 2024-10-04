@@ -14,7 +14,6 @@
     </properties>
 
     <build>
-        <finalName>Test</finalName>
         <plugins>
             <!-- Compiler Plugin for setting the Java version -->
             <plugin>
@@ -35,7 +34,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>Calculator</mainClass> <!-- Correct main class -->
+                            <mainClass>SamuDocker</mainClass> <!-- Correct main class -->
                         </manifest>
                     </archive>
                 </configuration>
