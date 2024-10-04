@@ -5,7 +5,7 @@ public class SamuDocker {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Hello, what is your name?: ");
-        int a = sc.nextInt();
+        String a = sc.nextLine();
         System.out.println("Hello, " + a + "!");
     }
     

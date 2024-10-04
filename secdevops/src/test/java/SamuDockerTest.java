@@ -19,7 +19,7 @@ public class SamuDockerTest {
     
         SamuDocker.main(new String[0]);
     
-        String expectedOutput = "Hello, Samu!\n";
+        String expectedOutput = "Hello, what is your name?: "+"\n"+"Hello, Samu!\n";
         assertEquals(expectedOutput, out.toString());
     }
 }
