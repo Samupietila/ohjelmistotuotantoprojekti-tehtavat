@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fi"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LocalizedGreeting.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">localizationgreeting</a> &gt; <a href="index.source.html" class="el_package">com.example</a> &gt; <span class="el_source">LocalizedGreeting.java</span></div><h1>LocalizedGreeting.java</h1><pre class="source lang-java linenums">package com.example;
+import java.util.Locale;
+import java.util.ResourceBundle;
+import java.util.Scanner;
+
+<span class="nc" id="L6">public class LocalizedGreeting {</span>
+
+    public static void main(String[] args) {
+        // Prompt user to select a language
+<span class="nc" id="L10">        System.out.println(&quot;Select a language: &quot;);</span>
+<span class="nc" id="L11">        System.out.println(&quot;1. English&quot;);</span>
+<span class="nc" id="L12">        System.out.println(&quot;2. French&quot;);</span>
+<span class="nc" id="L13">        System.out.println(&quot;3. Spanish&quot;);</span>
+
+<span class="nc" id="L15">        Scanner scanner = new Scanner(System.in);</span>
+<span class="nc" id="L16">        int choice = scanner.nextInt();</span>
+
+        // Set the locale based on user's choice
+        Locale locale;
+<span class="nc bnc" id="L20" title="All 4 branches missed.">        switch (choice) {</span>
+            case 1:
+<span class="nc" id="L22">                locale = new Locale.Builder().setLanguage(&quot;en&quot;).setRegion(&quot;US&quot;).build();</span>
+<span class="nc" id="L23">                break;</span>
+            case 2:
+<span class="nc" id="L25">                locale = new Locale.Builder().setLanguage(&quot;fr&quot;).setRegion(&quot;FR&quot;).build();</span>
+<span class="nc" id="L26">                break;</span>
+            case 3:
+<span class="nc" id="L28">                locale = new Locale.Builder().setLanguage(&quot;es&quot;).setRegion(&quot;ES&quot;).build();</span>
+<span class="nc" id="L29">                break;</span>
+            default:
+<span class="nc" id="L31">                System.out.println(&quot;Invalid choice. Defaulting to English.&quot;);</span>
+<span class="nc" id="L32">                locale = new Locale.Builder().setLanguage(&quot;en&quot;).setRegion(&quot;US&quot;).build();</span>
+                break;
+        }
+
+        // Load the resource bundle for the selected locale
+<span class="nc" id="L37">        ResourceBundle messages = ResourceBundle.getBundle(&quot;Message&quot;, locale);</span>
+
+        // Display the localized greeting message
+<span class="nc" id="L40">        System.out.println(messages.getString(&quot;greeting&quot;));</span>
+        
+<span class="nc" id="L42">        scanner.close();</span>
+<span class="nc" id="L43">    }</span>
+}
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
