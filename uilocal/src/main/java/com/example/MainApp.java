@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 
 public class MainApp extends Application {
@@ -31,6 +32,7 @@ public class MainApp extends Application {
 
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/fxml/"+fxml + ".fxml"));
+        fxmlLoader.setResources(ResourceBundle.getBundle("com.example.bundle1"));
         return fxmlLoader.load();
     }
 
