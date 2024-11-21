@@ -1,3 +1,4 @@
 {
-  "java.configuration.updateBuildConfiguration": "interactive"
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "java.checkstyle.configuration": "${workspaceFolder}/test_coverage_jacoco/target/checkstyle-checker.xml"
 }
