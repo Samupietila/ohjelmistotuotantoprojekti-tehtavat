@@ -1,7 +1,3 @@
-/**
- * This program says welcome 
- **/
-
 public class HelloWorld {
     public static void main(final String[] args) {
         // this says welcome
@@ -9,6 +5,7 @@ public class HelloWorld {
         int x = 10;
         int y = 0;
         int result = x / y;
+        System.out.println(result);
     }
         
 }
